@@ -1,0 +1,26 @@
+<div class="board">
+
+    <div class="board-row">
+        <slot index="0" variant="queue" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="1" variant="queue" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="2" variant="queue" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="3" variant="queue" (slotClick)="onSlotClick($event)"></slot>
+    </div>
+
+    <div class="board-row">
+        <slot index="4" variant="opponent" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="5" variant="opponent" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="6" variant="opponent" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="7" variant="opponent" (slotClick)="onSlotClick($event)"></slot>
+    </div>
+
+    <div class="board-divider"></div>
+
+    <div class="board-row">
+        <slot index="8" variant="player" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="9" variant="player" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="10" variant="player" (slotClick)="onSlotClick($event)"></slot>
+        <slot index="11" variant="player" (slotClick)="onSlotClick($event)"></slot>
+    </div>
+
+</div>

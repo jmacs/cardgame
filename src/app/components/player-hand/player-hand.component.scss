@@ -1,0 +1,23 @@
+$card-width: 12rem;
+$card-height: 18.24rem;
+$grid-width: 8rem;
+
+.player-hand {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,  $grid-width) ;
+
+    .card-container {
+        width: $card-width;
+        height: $card-height;
+        transform: rotate(3deg);
+        transition: transform 0.5s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1) translateY(-25px);
+            z-index: 10;
+        }
+
+    }
+
+}

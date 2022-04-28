@@ -1,0 +1,5 @@
+<div [attr.class]="'slot slot-' + variant" (click)="onClick()">
+    <ng-container *ngIf="slot$ | async as slot">
+        <portal [card]="slot.card"></portal>
+    </ng-container>
+</div>

@@ -1,0 +1,11 @@
+<div id="encounter-screen">
+    <div>
+        Encounter
+    </div>
+    <div>
+        <board></board>
+    </div>
+    <div>
+        <player-hand [cards]="(hand$ | async)"></player-hand>
+    </div>
+</div>

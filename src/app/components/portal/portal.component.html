@@ -1,0 +1,15 @@
+<div class="portal" [attr.data-face]="cardFace" [attr.data-cursor]="cursor">
+    <ng-container *ngIf="card">
+        <div class="portal-inner" [attr.data-fx]="card.effect">
+            <div class="back">
+                <svg class="card" viewBox="0 0 125 190" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <image class="background" [attr.href]="card.backfaceHref" x="0" y="0" width="125" height="190" />
+                </svg>
+            </div>
+            <div class="front">
+                <card [card]="card"></card>
+            </div>
+            <div class="mark" [attr.data-mark]="card.mark"></div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,26 @@
+<svg [attr.id]="idAttr" [attr.class]="classAttr" viewBox="0 0 125 190" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <image class="background" [attr.href]="card.backgroundHref" x="0" y="0" width="125" height="190" />
+    <text class="title" x="50%" y="24" text-anchor="middle" >
+        {{card.title}}
+    </text>
+    <image class="portrait" [attr.href]="card.portraitHref" x="6" y="34"  />
+    <ng-container *ngIf="currencyHref">
+        <image class="cost" [attr.href]="currencyHref" x="77" y="24" height="42"  />
+    </ng-container>
+    <ng-container *ngFor="let tribeImage of tribeImageData;">
+        <image class="tribe" [attr.href]="tribeImage.href" [attr.x]="tribeImage.x" [attr.y]="tribeImage.y" height="58" opacity="0.40" />
+    </ng-container>
+    <text class="stat power" x="28" y="160"  text-anchor="end">
+        {{card.power}}
+    </text>
+    <text class="stat health" x="114" y="168"  text-anchor="end">
+        {{card.health}}
+    </text>
+    <ng-container *ngFor="let abilityImage of baseAbilityImageData;">
+        <image class="ability base" [attr.href]="abilityImage.href" [attr.x]="abilityImage.x" [attr.y]="abilityImage.y" [attr.height]="abilityImage.size" />
+    </ng-container>
+    <ng-container *ngFor="let abilityImage of transferredAbilityImageData;">
+        <image href="assets/images/stamps/card_added_ability.png" [attr.x]="abilityImage.x - 8" [attr.y]="abilityImage.y - 8" [attr.height]="abilityImage.size + 16" />
+        <image  class="ability transferred" [attr.href]="abilityImage.href" [attr.x]="abilityImage.x" [attr.y]="abilityImage.y" [attr.height]="abilityImage.size" />
+    </ng-container>
+</svg>

@@ -1,0 +1,25 @@
+.card {
+    width: 100%;
+
+    image {
+        image-rendering: pixelated;
+    }
+
+    text {
+        font-family: "Urzeit", "Lucida Console", monospace;
+        letter-spacing: 0.1rem;
+        -webkit-font-smoothing: none;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .stat {
+        font-size: 30px;
+    }
+
+    .ability.transferred {
+        filter: invert(100%) sepia(100%) saturate(7414%) hue-rotate(72deg) brightness(100%) contrast(117%) drop-shadow(1px 1px 8px rgba(255,255,255,0.5));
+    }
+}

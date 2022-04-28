@@ -1,0 +1,17 @@
+@mixin animate-pulsate-opacity {
+    animation: pulsate-opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulsate-opacity {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
