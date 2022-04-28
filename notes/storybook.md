@@ -47,21 +47,27 @@ More on args: https://storybook.js.org/docs/angular/writing-stories/args
 
 Can't get PostCSS to work. Some kind of conflict with css-loader versions? No workaround until Storybook updates to PostCSS v8 :( 
 
-Copying some of tailwind's css for now...
+## Storybook + Akita
+Wrote a decorator that returns Akita stories.
 
+Setting data in the store works fine but nothing is rendering to the DOM.
 
-## Storybook Angular Rendering and Zones
+Debugged Akita source + Rxjs and everything seems to be working as expected.
+
+Tracked issue down to Angular's change detection
+
+Scoured the internet for ways to force change detection. Came cross this:
+- https://stackoverflow.com/questions/64608930/re-render-component-after-change-in-custom-storybook-add-on
+
+Time to learn about Zone.js...
+
+## Storybook Rendering and Angular Zones
 
 Angular won't update if state mutations happen outside the "ngZone".
 
-This is key:
-```
-zone.run(() => {
-    service.setSlot(SlotIndex.OpponentSlot1, {
-        card: game.cardSpawner.get('Geck')
-    });
-    run(storybookTest, {service}).then(() => {
-        console.log('storybookTest sequence done');
-    });
-});
-```
+Figured out a solution. Include an Angular module in the Storybook decorators. When
+that module is initialized, cache a static reference to the Injector and NgZone.
+https://github.com/jmacs/cardgame/blob/main/.storybook/decorators/angular-service.ts
+
+These cached references can be used in Storybook decorators.
+

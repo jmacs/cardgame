@@ -25,9 +25,7 @@ function namedExport(file) {
     return `export * from './${removeFileExtension(file)}';`;
 }
 
-// eslint-disable-next-line require-jsdoc
 function createExportName(file) {
-    // eslint-disable-next-line max-len
     return removeFileExtension(file).replace(/[^a-zA-Z0-9/-]+/, '').replace('-', '_');
 }
 
