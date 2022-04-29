@@ -1,0 +1,27 @@
+@import "/src/styles/variables";
+
+.bell {
+    background-image: url("/src/assets/images/buttons/bell_button.png");
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+    border: 3px solid $color_red;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:active:not([disabled]) {
+        background-image: url("/src/assets/images/buttons/bell_button_pressed.png");
+        border: 3px solid $color_white;
+        transform: scale(1.05);
+    }
+
+    &:hover:not([disabled]) {
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        filter: invert(20%);
+        border: 2px solid $color_light_grey;
+    }
+
+}

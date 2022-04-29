@@ -1,4 +1,4 @@
 let id = 0;
-export function identity(): number {
-    return id++;
+export function nextIdentity(): number {
+    return ++id;
 }

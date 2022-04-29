@@ -38,7 +38,7 @@ export interface CardBlueprint {
 }
 
 export type Card = {
-    readonly id: string;
+    readonly id: number;
     readonly blueprint: CardBlueprint;
 
     /* CardBlueprint Attributes */
@@ -128,7 +128,7 @@ export function cloneCardBlueprint(blueprint: CardBlueprint, overrides?: Partial
     return clone;
 }
 
-export function createCardFromBlueprint(id: string, blueprint: CardBlueprint, overrides?: Partial<CardBlueprint>): Card {
+export function createCardFromBlueprint(id: number, blueprint: CardBlueprint, overrides?: Partial<CardBlueprint>): Card {
     const blueprintAttrs = cloneCardBlueprint(blueprint, overrides);
     return {
         id,
@@ -144,38 +144,3 @@ export function createCardFromBlueprint(id: string, blueprint: CardBlueprint, ov
         mark: CardMark.None,
     };
 }
-
-/*
-
-isHealthBuffed() {
-    return this.health > this.initialHealth;
-}
-
-isPowerBuffed() {
-    return this.power > this.initialPower;
-}
-
-isPowerDebuffed() {
-    return this.power < this.initialPower;
-}
-
-isDead() {
-    return this.health < 1;
-}
-
-isDamaged() {
-    return this.damage > 0;
-}
-
-hasBaseAbilities() {
-    return this.baseAbilities.length > 0;
-}
-
-getAllAbilities() {
-    return [
-        ...this.intrinsicAbilities,
-        ...this.baseAbilities,
-        ...this.transferredAbilities,
-    ];
-}
- */

@@ -6,8 +6,10 @@ import {PlayerHandComponent} from './player-hand/player-hand.component';
 import {PortalComponent} from './portal/portal.component';
 import {StateModule} from '../state/state.module';
 import {SlotComponent} from './board/slot.component';
+import {BellComponent} from './bell/bell.component';
 
 const components = [
+    BellComponent,
     BoardComponent,
     CardComponent,
     PlayerHandComponent,

@@ -1,0 +1,8 @@
+@import "variables";
+
+html,body {
+    background-color: $color_black;
+    color: $color_beige;
+    font-family: "RetroGame", "Lucida Console", monospace;
+    //user-select: none;
+}

@@ -1,5 +1,6 @@
 import {Card, CardBlueprint, cloneCardBlueprint, createCardFromBlueprint} from './card';
 import {toMap} from '../utils/arrays';
+import {nextIdentity} from '../utils/identity';
 
 type CardSpawnerOptions = {
     blueprints: CardBlueprint[]
@@ -31,7 +32,7 @@ export class CardSpawner {
     }
 
     createCardFromBlueprint(blueprintName: string, overrides?: Partial<CardBlueprint>): Card {
-        const id = 'u12589hfq';
+        const id = nextIdentity();
         const blueprint = this.getBlueprint(blueprintName);
         return createCardFromBlueprint(id, blueprint, overrides);
     }

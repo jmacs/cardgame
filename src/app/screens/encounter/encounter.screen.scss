@@ -1,5 +1,27 @@
 #encounter-screen {
-    display: grid;
 
+    .encounter-dialog {
+        position: fixed;
+        z-index: 1;
+        font-family: "Urzeit", "Lucida Console", monospace;
+        letter-spacing: 0.1rem;
+        -webkit-font-smoothing: none;
+        text-align: center;
+        font-size: 2rem;
+        display: none;
+    }
+
+    .encounter-screen-grid {
+        display: grid;
+        grid-template-columns: 14rem auto 14rem;
+
+        .centered {
+            margin: auto;
+        }
+
+        > div {
+            border: 1px dashed blue;
+        }
+    }
 
 }

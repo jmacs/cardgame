@@ -3,6 +3,7 @@ import template from './encounter.screen.html';
 import {EncounterService} from '../../state';
 import {Observable} from 'rxjs';
 import {Card} from '../../../game/card';
+import './encounter.screen.scss';
 
 @Component({
     template,
@@ -15,8 +16,17 @@ export class EncounterScreen implements OnInit  {
 
     ngOnInit() {
         this.hand$ = this.encounterService.query.selectPlayerHand();
-
     }
+
+    onHandClick(card) {
+        console.log('onHandClick');
+        this.encounterService.initiatePlaceCard(card);
+    }
+
+    onBellClick() {
+        this.encounterService.endTurn();
+    }
+
 }
 
 

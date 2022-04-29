@@ -11,6 +11,7 @@ export type EncounterState = {
     bones: number
     lives: number
     items: string[]
+    blood: number
 };
 
 export function initialState(): EncounterState {
@@ -20,6 +21,7 @@ export function initialState(): EncounterState {
         sideDeck: [],
         hand: [],
         bones: 0,
+        blood: 0,
         lives: 0,
         items: [],
     };

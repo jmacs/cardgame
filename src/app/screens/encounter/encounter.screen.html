@@ -1,11 +1,65 @@
 <div id="encounter-screen">
-    <div>
-        Encounter
+    <div class="encounter-dialog">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a libero eu felis finibus rhoncus.
     </div>
-    <div>
-        <board></board>
+
+    <div class="encounter-screen-grid">
+
+        <!-- TOP LEFT -->
+        <div>
+            OPPONENT PORTRAIT
+            <br/><br/>
+            OPPONENT LIVES
+            <br/><br/><br/><br/>
+            OPPONENT TOTEM
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+            TICKER
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div>End Turn</div>
+            <bell (bellClick)="onBellClick()"></bell>
+        </div>
+
+        <!-- TOP CENTER -->
+        <div class="centered">
+            <board></board>
+        </div>
+
+        <!-- TOP RIGHT -->
+        <div>
+            PLAYER PORTRAIT
+            <br/><br/>
+            PLAYER LIVES
+            <br/>
+            [$]
+            <br/><br/><br/><br/>
+            PLAYER TOTEM
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+            ITEM 1
+            <br/><br/>
+            ITEM 2
+            <br/><br/>
+            ITEM 2
+            <br/><br/><br/><br/><br/><br/>
+            <div>BONES</div>
+
+        </div>
+
+        <!-- BOTTOM LEFT -->
+        <div>
+            MAIN DECK
+        </div>
+
+        <!-- BOTTOM CENTER -->
+        <div>
+            <player-hand [cards]="(hand$ | async)" (cardClick)="onHandClick($event)"></player-hand>
+        </div>
+
+        <!-- BOTTOM RIGHT -->
+        <div>
+            SIDE DECK
+        </div>
+
     </div>
-    <div>
-        <player-hand [cards]="(hand$ | async)"></player-hand>
-    </div>
+
+
 </div>

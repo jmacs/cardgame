@@ -2,6 +2,9 @@ import {EncounterStore} from './encounter.store';
 import {Injectable} from '@angular/core';
 import {EncounterQuery} from './encounter.query';
 import {Card} from '../../game/card';
+import {SlotIndex} from '../../game/enums';
+
+// clean this up
 
 @Injectable({providedIn: 'root'})
 export class EncounterService {
@@ -50,6 +53,55 @@ export class EncounterService {
 
     setHand(hand: Card[]) {
         this.encounterStore.update({hand});
+    }
+
+    // todo:
+
+    beginEncounter() {
+
+    }
+
+    initiatePlaceCard(card) {
+        const state = this.encounterStore.getValue();
+        const hand = state.hand.filter((c) => c !== card);
+        const slots = state.slots.slice();
+        slots[SlotIndex.PlayerSlot1] = {
+            ...slots[SlotIndex.PlayerSlot1],
+            card
+        };
+        this.encounterStore.update({hand, slots});
+    }
+
+    cancelPlaceCard() {
+
+    }
+
+    commitPlaceCard(slotIndex: number) {
+
+    }
+
+    pickupFromMainDeck() {
+
+    }
+
+    pickupFromSideDeck() {
+
+    }
+
+    sacrificeCard() {
+
+    }
+
+    endTurn() {
+
+    }
+
+    useItem() {
+
+    }
+
+    inspectAbility() {
+
     }
 
 }
